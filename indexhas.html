@@ -1,0 +1,2954 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>English with Hashir</title>
+
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#07111f;
+    color:#fff;
+    line-height:1.7;
+}
+
+:root{
+    --blue:#174c86;
+    --blue2:#2878c8;
+    --red:#7d1e29;
+    --red2:#d43b48;
+    --dark:#07111f;
+    --dark2:#0c192b;
+    --card:#101f33;
+    --gray:#9eafc3;
+    --green:#2185d0;
+    --error:#d93645;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    padding:18px 7%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #07111f,
+            #0d2949,
+            #4b1119
+        );
+
+    border-bottom:1px solid rgba(255,255,255,.1);
+
+    box-shadow:0 8px 30px rgba(0,0,0,.4);
+}
+
+.logo{
+    font-size:27px;
+    font-weight:900;
+}
+
+.logo span{
+    color:var(--red2);
+}
+
+nav{
+    display:flex;
+    gap:7px;
+    flex-wrap:wrap;
+}
+
+nav a{
+    text-decoration:none;
+    color:#fff;
+
+    padding:8px 13px;
+
+    border-radius:7px;
+
+    font-size:14px;
+    font-weight:bold;
+
+    transition:.3s;
+}
+
+nav a:hover{
+    background:var(--blue);
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+    min-height:500px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    padding:70px 20px;
+
+    background:
+        linear-gradient(
+            rgba(7,17,31,.75),
+            rgba(7,17,31,.96)
+        ),
+        linear-gradient(
+            135deg,
+            #123f73,
+            #64151f
+        );
+}
+
+.hero-content{
+    max-width:900px;
+}
+
+.hero h1{
+    font-size:clamp(42px,7vw,75px);
+    line-height:1.1;
+    margin-bottom:20px;
+}
+
+.hero h1 span{
+    color:var(--red2);
+}
+
+.hero p{
+    color:#c0ccda;
+    font-size:20px;
+    margin-bottom:30px;
+}
+
+.hero-buttons{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.btn{
+    display:inline-block;
+
+    padding:13px 25px;
+
+    border:none;
+    border-radius:8px;
+
+    color:#fff;
+
+    font-size:15px;
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+.btn-blue{
+    background:
+        linear-gradient(
+            135deg,
+            var(--blue),
+            var(--blue2)
+        );
+}
+
+.btn-red{
+    background:
+        linear-gradient(
+            135deg,
+            #671820,
+            #b32e3a
+        );
+}
+
+
+/* =====================================================
+   SECTIONS
+===================================================== */
+
+section{
+    padding:75px 7%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.section-title h2{
+    font-size:38px;
+    margin-bottom:8px;
+}
+
+.section-title h2 span{
+    color:var(--red2);
+}
+
+.section-title p{
+    color:var(--gray);
+}
+
+
+/* =====================================================
+   SEARCH
+===================================================== */
+
+.search-box{
+    max-width:700px;
+    margin:0 auto 40px;
+}
+
+.search-box input{
+    width:100%;
+
+    padding:15px 18px;
+
+    border-radius:8px;
+
+    border:1px solid rgba(255,255,255,.12);
+
+    outline:none;
+
+    background:#0d1b2d;
+
+    color:white;
+
+    font-size:15px;
+}
+
+.search-box input:focus{
+    border-color:var(--blue2);
+}
+
+
+/* =====================================================
+   TOPIC GRID
+===================================================== */
+
+.topic-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(240px,1fr));
+
+    gap:22px;
+
+    max-width:1250px;
+
+    margin:auto;
+}
+
+.topic-card{
+    position:relative;
+
+    padding:30px 24px;
+
+    min-height:220px;
+
+    border-radius:15px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(18,63,115,.25),
+            rgba(110,24,32,.13)
+        );
+
+    border:1px solid rgba(255,255,255,.1);
+
+    cursor:pointer;
+
+    overflow:hidden;
+
+    transition:.3s;
+}
+
+.topic-card::before{
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    top:0;
+
+    width:100%;
+    height:4px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--blue2),
+            var(--red2)
+        );
+}
+
+.topic-card:hover{
+    transform:translateY(-8px);
+
+    border-color:var(--blue2);
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,.45);
+}
+
+.topic-icon{
+    font-size:42px;
+    margin-bottom:15px;
+}
+
+.topic-card h3{
+    font-size:22px;
+    margin-bottom:8px;
+}
+
+.topic-card p{
+    color:var(--gray);
+    font-size:14px;
+}
+
+
+/* =====================================================
+   MODAL
+===================================================== */
+
+.modal{
+    position:fixed;
+    inset:0;
+
+    background:rgba(0,0,0,.82);
+
+    backdrop-filter:blur(8px);
+
+    display:none;
+
+    align-items:center;
+    justify-content:center;
+
+    padding:15px;
+
+    z-index:2000;
+}
+
+.modal.active{
+    display:flex;
+}
+
+.modal-content{
+    width:min(1000px,100%);
+
+    max-height:92vh;
+
+    overflow-y:auto;
+
+    background:
+        linear-gradient(
+            145deg,
+            #0b182a,
+            #101f33
+        );
+
+    border:1px solid rgba(255,255,255,.12);
+
+    border-radius:16px;
+
+    padding:38px;
+
+    position:relative;
+
+    box-shadow:
+        0 30px 90px rgba(0,0,0,.7);
+}
+
+.close-btn{
+    position:absolute;
+
+    right:17px;
+    top:15px;
+
+    width:40px;
+    height:40px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:rgba(217,54,69,.2);
+
+    color:#fff;
+
+    font-size:25px;
+
+    cursor:pointer;
+}
+
+.close-btn:hover{
+    background:var(--red2);
+}
+
+.modal-content h2{
+    font-size:35px;
+    margin-bottom:20px;
+}
+
+.modal-content h3{
+    color:#58a4e8;
+
+    font-size:22px;
+
+    margin-top:30px;
+    margin-bottom:12px;
+}
+
+.modal-content h4{
+    color:#d7e4f1;
+
+    font-size:18px;
+
+    margin-top:20px;
+}
+
+.modal-content p{
+    color:#c1cedc;
+
+    margin-bottom:12px;
+}
+
+.modal-content ul{
+    margin-left:25px;
+
+    color:#c1cedc;
+}
+
+.modal-content li{
+    margin-bottom:7px;
+}
+
+
+/* =====================================================
+   INFO BOXES
+===================================================== */
+
+.example{
+    background:rgba(29,95,167,.13);
+
+    border-left:4px solid var(--blue2);
+
+    padding:16px 18px;
+
+    border-radius:7px;
+
+    margin:15px 0;
+
+    color:#dce9f7;
+}
+
+.important{
+    background:rgba(110,24,32,.16);
+
+    border-left:4px solid var(--red2);
+
+    padding:16px 18px;
+
+    border-radius:7px;
+
+    margin:18px 0;
+}
+
+.practice-box{
+    background:
+        linear-gradient(
+            135deg,
+            rgba(18,63,115,.18),
+            rgba(110,24,32,.13)
+        );
+
+    border:1px solid rgba(255,255,255,.1);
+
+    padding:20px;
+
+    border-radius:10px;
+
+    margin:20px 0;
+}
+
+.practice-box h4{
+    color:#fff;
+    margin-bottom:10px;
+}
+
+.answer{
+    color:#62b4f2;
+
+    font-weight:bold;
+
+    margin-top:8px;
+}
+
+
+/* =====================================================
+   TENSE TABLE
+===================================================== */
+
+.tense-table{
+    width:100%;
+
+    border-collapse:collapse;
+
+    margin:20px 0;
+}
+
+.tense-table th{
+    background:var(--blue);
+
+    color:#fff;
+
+    padding:13px;
+
+    text-align:left;
+}
+
+.tense-table td{
+    padding:13px;
+
+    border-bottom:
+        1px solid rgba(255,255,255,.08);
+
+    color:#c2cedc;
+}
+
+.tense-table tr:hover td{
+    background:rgba(255,255,255,.03);
+}
+
+
+/* =====================================================
+   QUIZ
+===================================================== */
+
+.quiz-container{
+    max-width:900px;
+
+    margin:auto;
+}
+
+.quiz-question{
+    background:#0e1c2e;
+
+    border:1px solid rgba(255,255,255,.09);
+
+    border-radius:13px;
+
+    padding:27px;
+
+    margin-bottom:20px;
+}
+
+.quiz-question h3{
+    margin-bottom:20px;
+}
+
+.quiz-options{
+    display:grid;
+    gap:10px;
+}
+
+.quiz-option{
+    width:100%;
+
+    text-align:left;
+
+    padding:14px 16px;
+
+    border-radius:8px;
+
+    border:1px solid rgba(255,255,255,.1);
+
+    background:#14243a;
+
+    color:#dce6f2;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    transition:.25s;
+}
+
+.quiz-option:hover{
+    background:#1b385a;
+
+    border-color:var(--blue2);
+}
+
+
+/* CORRECT */
+
+.quiz-option.correct{
+    background:
+        rgba(33,133,208,.16);
+
+    border:2px solid var(--green);
+
+    color:#6db9f4;
+
+    font-weight:bold;
+}
+
+.quiz-option.correct::before{
+    content:"✓ ";
+
+    font-size:20px;
+}
+
+
+/* WRONG */
+
+.quiz-option.wrong{
+    background:
+        rgba(217,54,69,.16);
+
+    border:2px solid var(--error);
+
+    color:#ff6975;
+
+    font-weight:bold;
+}
+
+.quiz-option.wrong::before{
+    content:"✕ ";
+
+    font-size:20px;
+}
+
+
+/* FEEDBACK */
+
+.feedback{
+    margin-top:15px;
+
+    padding:14px;
+
+    border-radius:7px;
+
+    display:none;
+
+    font-weight:bold;
+}
+
+.feedback.correct-feedback{
+    display:block;
+
+    background:rgba(33,133,208,.12);
+
+    color:#65b6f7;
+
+    border-left:4px solid var(--green);
+}
+
+.feedback.wrong-feedback{
+    display:block;
+
+    background:rgba(217,54,69,.12);
+
+    color:#ff6975;
+
+    border-left:4px solid var(--error);
+}
+
+
+/* =====================================================
+   PROGRESS
+===================================================== */
+
+.progress-container{
+    max-width:900px;
+
+    margin:20px auto;
+
+    height:8px;
+
+    background:#172438;
+
+    border-radius:20px;
+
+    overflow:hidden;
+}
+
+.progress-bar{
+    height:100%;
+
+    width:0%;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--blue2),
+            var(--red2)
+        );
+
+    transition:.4s;
+}
+
+
+/* =====================================================
+   SCORE
+===================================================== */
+
+.score-box{
+    text-align:center;
+
+    padding:40px;
+
+    border-radius:15px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(18,63,115,.25),
+            rgba(110,24,32,.18)
+        );
+
+    border:1px solid rgba(255,255,255,.1);
+}
+
+.score-number{
+    font-size:55px;
+
+    font-weight:900;
+
+    color:#55a8e9;
+
+    margin:10px;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+    background:#050c15;
+
+    text-align:center;
+
+    padding:35px;
+
+    color:#8997aa;
+
+    border-top:
+        1px solid rgba(255,255,255,.08);
+}
+
+footer strong{
+    color:#fff;
+}
+
+footer span{
+    color:var(--red2);
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:700px){
+
+    header{
+        flex-direction:column;
+
+        gap:12px;
+    }
+
+    nav{
+        justify-content:center;
+    }
+
+    nav a{
+        font-size:12px;
+        padding:7px 9px;
+    }
+
+    .hero h1{
+        font-size:42px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    section{
+        padding:55px 5%;
+    }
+
+    .topic-grid{
+        grid-template-columns:1fr;
+    }
+
+    .modal-content{
+        padding:27px 17px;
+    }
+
+    .modal-content h2{
+        font-size:28px;
+    }
+
+    .tense-table{
+        display:block;
+
+        overflow-x:auto;
+
+        white-space:nowrap;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header>
+
+    <div class="logo">
+        English <span>with Hashir</span>
+    </div>
+
+    <nav>
+
+        <a href="#home">Home</a>
+
+        <a href="#topics">Lessons</a>
+
+        <a href="#practice">Practice</a>
+
+        <a href="#quiz">MCQs</a>
+
+        <a href="#about">About</a>
+
+    </nav>
+
+</header>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <h1>
+            English <span>with Hashir</span>
+        </h1>
+
+        <p>
+            Learn English Grammar, Tenses, Vocabulary,
+            Speaking, Pronunciation and Everyday English.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a
+                href="#topics"
+                class="btn btn-blue"
+            >
+                Start Learning
+            </a>
+
+            <a
+                href="#quiz"
+                class="btn btn-red"
+            >
+                Take a Quiz
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     TOPICS
+===================================================== -->
+
+<section id="topics">
+
+    <div class="section-title">
+
+        <h2>
+            English <span>Lessons</span>
+        </h2>
+
+        <p>
+            Select a lesson and start learning.
+        </p>
+
+    </div>
+
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search a lesson..."
+        >
+
+    </div>
+
+
+    <div class="topic-grid">
+
+
+        <div
+            class="topic-card"
+            data-topic="tenses"
+        >
+
+            <div class="topic-icon">⏳</div>
+
+            <h3>Tenses</h3>
+
+            <p>
+                Learn all 12 tenses with
+                rules, structures and practice.
+            </p>
+
+        </div>
+
+
+        <div
+            class="topic-card"
+            data-topic="gerunds"
+        >
+
+            <div class="topic-icon">📚</div>
+
+            <h3>Gerunds</h3>
+
+            <p>
+                Understand gerunds with
+                examples and exercises.
+            </p>
+
+        </div>
+
+
+        <div
+            class="topic-card"
+            data-topic="speaking"
+        >
+
+            <div class="topic-icon">🗣️</div>
+
+            <h3>Speaking</h3>
+
+            <p>
+                Practice everyday English
+                speaking sentences.
+            </p>
+
+        </div>
+
+
+        <div
+            class="topic-card"
+            data-topic="vocabulary"
+        >
+
+            <div class="topic-icon">📖</div>
+
+            <h3>Vocabulary</h3>
+
+            <p>
+                Learn useful words,
+                meanings and examples.
+            </p>
+
+        </div>
+
+
+        <div
+            class="topic-card"
+            data-topic="grammar"
+        >
+
+            <div class="topic-icon">✏️</div>
+
+            <h3>Grammar</h3>
+
+            <p>
+                Learn important English
+                grammar rules.
+            </p>
+
+        </div>
+
+
+        <div
+            class="topic-card"
+            data-topic="pronunciation"
+        >
+
+            <div class="topic-icon">🎙️</div>
+
+            <h3>Pronunciation</h3>
+
+            <p>
+                Improve pronunciation and
+                speaking clarity.
+            </p>
+
+        </div>
+
+
+        <div
+            class="topic-card"
+            data-topic="phrasal"
+        >
+
+            <div class="topic-icon">🔤</div>
+
+            <h3>Phrasal Verbs</h3>
+
+            <p>
+                Learn common phrasal verbs
+                used in everyday English.
+            </p>
+
+        </div>
+
+
+        <div
+            class="topic-card"
+            data-topic="idioms"
+        >
+
+            <div class="topic-icon">💡</div>
+
+            <h3>Idioms</h3>
+
+            <p>
+                Learn common English idioms
+                and their meanings.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PRACTICE
+===================================================== -->
+
+<section id="practice">
+
+    <div class="section-title">
+
+        <h2>
+            English <span>Practice</span>
+        </h2>
+
+        <p>
+            Read these sentences aloud and practice them.
+        </p>
+
+    </div>
+
+
+    <div class="topic-grid">
+
+
+        <div class="practice-box">
+
+            <h4>🗣️ Speaking Practice</h4>
+
+            <p>
+                Good morning. How are you today?
+            </p>
+
+            <p>
+                I am learning English every day.
+            </p>
+
+            <p>
+                Could you please repeat that?
+            </p>
+
+            <p>
+                I didn't understand. Could you explain it?
+            </p>
+
+        </div>
+
+
+        <div class="practice-box">
+
+            <h4>🏠 Daily Life</h4>
+
+            <p>
+                I wake up at seven o'clock.
+            </p>
+
+            <p>
+                I brush my teeth and take a shower.
+            </p>
+
+            <p>
+                I have breakfast with my family.
+            </p>
+
+            <p>
+                I go to work in the morning.
+            </p>
+
+        </div>
+
+
+        <div class="practice-box">
+
+            <h4>💬 Conversation</h4>
+
+            <p>
+                What are you doing?
+            </p>
+
+            <p>
+                I am studying English.
+            </p>
+
+            <p>
+                What did you do yesterday?
+            </p>
+
+            <p>
+                I visited my friend.
+            </p>
+
+        </div>
+
+
+        <div class="practice-box">
+
+            <h4>🎯 Future Practice</h4>
+
+            <p>
+                I will call you tomorrow.
+            </p>
+
+            <p>
+                I am going to study tonight.
+            </p>
+
+            <p>
+                I will improve my English.
+            </p>
+
+            <p>
+                I will practice speaking every day.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     QUIZ
+===================================================== -->
+
+<section id="quiz">
+
+    <div class="section-title">
+
+        <h2>
+            English <span>MCQs</span>
+        </h2>
+
+        <p>
+            Test what you have learned.
+        </p>
+
+    </div>
+
+
+    <div class="progress-container">
+
+        <div
+            class="progress-bar"
+            id="progressBar"
+        ></div>
+
+    </div>
+
+
+    <div
+        class="quiz-container"
+        id="quizContainer"
+    ></div>
+
+
+    <div style="
+        text-align:center;
+        margin-top:20px;
+    ">
+
+        <button
+            class="btn btn-blue"
+            id="nextQuestion"
+        >
+            Next Question
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section id="about">
+
+    <div class="section-title">
+
+        <h2>
+            About <span>English with Hashir</span>
+        </h2>
+
+        <p>
+            Learn English step by step.
+        </p>
+
+    </div>
+
+
+    <div style="
+        max-width:850px;
+        margin:auto;
+        text-align:center;
+        color:#aebdce;
+    ">
+
+        <p>
+            English with Hashir is an educational platform
+            designed to help learners improve their grammar,
+            vocabulary, pronunciation and speaking skills.
+        </p>
+
+        <br>
+
+        <p>
+            Learn the rule, read the examples, speak the
+            sentences aloud and then test yourself with MCQs.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     MODAL
+===================================================== -->
+
+<div
+    class="modal"
+    id="topicModal"
+>
+
+    <div
+        class="modal-content"
+        id="modalContent"
+    ></div>
+
+</div>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <p>
+        © 2026
+        <strong>
+            English <span>with Hashir</span>
+        </strong>
+        — Learn • Practice • Improve
+    </p>
+
+</footer>
+
+
+<script>
+
+
+/* =====================================================
+   LESSON DATA
+===================================================== */
+
+const lessons = {
+
+
+/* =====================================================
+   TENSES
+===================================================== */
+
+tenses:{
+
+html:`
+
+<h2>⏳ English Tenses</h2>
+
+<p>
+Tenses are one of the most important parts of English grammar.
+They tell us when an action happens.
+</p>
+
+<div class="important">
+
+<strong>
+There are 12 basic English tenses:
+4 Present + 4 Past + 4 Future.
+</strong>
+
+</div>
+
+
+<h3>1. Present Simple</h3>
+
+<p>
+<strong>Structure:</strong>
+Subject + V1 / V1+s/es
+</p>
+
+<p>
+Use it for habits, routines, facts and general truths.
+</p>
+
+<div class="example">
+
+I go to school every day.<br>
+She works in a hospital.<br>
+The sun rises in the east.
+
+</div>
+
+<div class="practice-box">
+
+<h4>Practice Sentences</h4>
+
+<p>I wake up early every morning.</p>
+<p>He plays cricket on Sundays.</p>
+<p>She speaks English very well.</p>
+<p>They live in Lahore.</p>
+
+</div>
+
+
+<h3>2. Present Continuous</h3>
+
+<p>
+<strong>Structure:</strong>
+Subject + am/is/are + V-ing
+</p>
+
+<p>
+Use it for actions happening now or around the present time.
+</p>
+
+<div class="example">
+
+I am studying English now.<br>
+She is cooking dinner.<br>
+They are playing football.
+
+</div>
+
+<div class="practice-box">
+
+<h4>Practice Sentences</h4>
+
+<p>I am learning new words.</p>
+<p>He is watching television.</p>
+<p>We are working on a project.</p>
+<p>They are waiting for the bus.</p>
+
+</div>
+
+
+<h3>3. Present Perfect</h3>
+
+<p>
+<strong>Structure:</strong>
+Subject + has/have + V3
+</p>
+
+<p>
+Use it for completed actions connected with the present.
+</p>
+
+<div class="example">
+
+I have finished my homework.<br>
+She has visited Islamabad.<br>
+They have completed the project.
+
+</div>
+
+
+<h3>4. Present Perfect Continuous</h3>
+
+<p>
+<strong>Structure:</strong>
+Subject + has/have been + V-ing
+</p>
+
+<div class="example">
+
+I have been studying for two hours.<br>
+She has been working since morning.
+
+</div>
+
+
+<h3>5. Past Simple</h3>
+
+<p>
+<strong>Structure:</strong>
+Subject + V2
+</p>
+
+<p>
+Use it for completed actions in the past.
+</p>
+
+<div class="example">
+
+I visited Lahore yesterday.<br>
+She watched a movie last night.<br>
+They played cricket.
+
+</div>
+
+<div class="practice-box">
+
+<h4>Practice Sentences</h4>
+
+<p>I went to school yesterday.</p>
+<p>He bought a new phone.</p>
+<p>We watched a movie last night.</p>
+<p>She cooked dinner.</p>
+
+</div>
+
+
+<h3>6. Past Continuous</h3>
+
+<p>
+<strong>Structure:</strong>
+Subject + was/were + V-ing
+</p>
+
+<div class="example">
+
+I was studying at 8 PM.<br>
+They were playing cricket.<br>
+She was cooking dinner.
+
+</div>
+
+
+<h3>7. Past Perfect</h3>
+
+<p>
+<strong>Structure:</strong>
+Subject + had + V3
+</p>
+
+<div class="example">
+
+I had finished my homework before he arrived.<br>
+She had already left.
+
+</div>
+
+
+<h3>8. Past Perfect Continuous</h3>
+
+<p>
+<strong>Structure:</strong>
+Subject + had been + V-ing
+</p>
+
+<div class="example">
+
+I had been studying for two hours before he came.<br>
+They had been waiting since morning.
+
+</div>
+
+
+<h3>9. Future Simple</h3>
+
+<p>
+<strong>Structure:</strong>
+Subject + will + V1
+</p>
+
+<div class="example">
+
+I will help you.<br>
+She will call tomorrow.<br>
+They will come next week.
+
+</div>
+
+
+<h3>10. Future Continuous</h3>
+
+<p>
+<strong>Structure:</strong>
+Subject + will be + V-ing
+</p>
+
+<div class="example">
+
+I will be studying at 8 PM.<br>
+She will be working tomorrow morning.
+
+</div>
+
+
+<h3>11. Future Perfect</h3>
+
+<p>
+<strong>Structure:</strong>
+Subject + will have + V3
+</p>
+
+<div class="example">
+
+I will have finished the work by Monday.<br>
+She will have arrived by 7 PM.
+
+</div>
+
+
+<h3>12. Future Perfect Continuous</h3>
+
+<p>
+<strong>Structure:</strong>
+Subject + will have been + V-ing
+</p>
+
+<div class="example">
+
+By next year, I will have been teaching
+for five years.
+
+</div>
+
+
+<h3>Quick Tense Table</h3>
+
+<table class="tense-table">
+
+<tr>
+<th>Tense</th>
+<th>Structure</th>
+<th>Example</th>
+</tr>
+
+<tr>
+<td>Present Simple</td>
+<td>V1 / V1+s</td>
+<td>He plays cricket.</td>
+</tr>
+
+<tr>
+<td>Present Continuous</td>
+<td>am/is/are + V-ing</td>
+<td>He is playing.</td>
+</tr>
+
+<tr>
+<td>Present Perfect</td>
+<td>has/have + V3</td>
+<td>He has played.</td>
+</tr>
+
+<tr>
+<td>Present Perfect Continuous</td>
+<td>has/have been + V-ing</td>
+<td>He has been playing.</td>
+</tr>
+
+<tr>
+<td>Past Simple</td>
+<td>V2</td>
+<td>He played.</td>
+</tr>
+
+<tr>
+<td>Past Continuous</td>
+<td>was/were + V-ing</td>
+<td>He was playing.</td>
+</tr>
+
+<tr>
+<td>Past Perfect</td>
+<td>had + V3</td>
+<td>He had played.</td>
+</tr>
+
+<tr>
+<td>Past Perfect Continuous</td>
+<td>had been + V-ing</td>
+<td>He had been playing.</td>
+</tr>
+
+<tr>
+<td>Future Simple</td>
+<td>will + V1</td>
+<td>He will play.</td>
+</tr>
+
+<tr>
+<td>Future Continuous</td>
+<td>will be + V-ing</td>
+<td>He will be playing.</td>
+</tr>
+
+<tr>
+<td>Future Perfect</td>
+<td>will have + V3</td>
+<td>He will have played.</td>
+</tr>
+
+<tr>
+<td>Future Perfect Continuous</td>
+<td>will have been + V-ing</td>
+<td>He will have been playing.</td>
+</tr>
+
+</table>
+
+
+<div class="important">
+
+<strong>Tip:</strong>
+Don't try to memorize all 12 tenses in one day.
+Learn one tense, understand its structure,
+make your own sentences and practice speaking.
+
+</div>
+
+`
+
+},
+
+
+/* =====================================================
+   GERUNDS
+===================================================== */
+
+gerunds:{
+
+html:`
+
+<h2>📚 Gerunds</h2>
+
+<p>
+A gerund is an <strong>-ing</strong> form of a verb
+that functions as a noun.
+</p>
+
+<div class="example">
+
+<strong>Swimming is good for health.</strong>
+
+</div>
+
+<p>
+Here, "swimming" comes from the verb "swim",
+but it functions as the subject of the sentence.
+</p>
+
+
+<h3>Gerund as Subject</h3>
+
+<div class="example">
+
+Reading is useful.<br>
+Swimming is fun.<br>
+Learning English takes practice.
+
+</div>
+
+
+<h3>Gerund After Certain Verbs</h3>
+
+<p>
+Some verbs are commonly followed by gerunds.
+</p>
+
+<ul>
+
+<li>enjoy</li>
+<li>avoid</li>
+<li>finish</li>
+<li>mind</li>
+<li>suggest</li>
+<li>practice</li>
+<li>consider</li>
+
+</ul>
+
+<div class="example">
+
+I enjoy <strong>reading</strong>.<br>
+She avoids <strong>eating</strong> junk food.<br>
+He practices <strong>speaking</strong> English.
+
+</div>
+
+
+<h3>Gerund After Prepositions</h3>
+
+<div class="example">
+
+He is good at <strong>speaking</strong> English.<br>
+Thank you for <strong>helping</strong> me.<br>
+She is interested in <strong>learning</strong> English.
+
+</div>
+
+
+<div class="practice-box">
+
+<h4>Practice</h4>
+
+<p>1. I enjoy _____ books.</p>
+<p>2. She is good at _____ English.</p>
+<p>3. _____ is good exercise.</p>
+<p>4. He avoids _____ late.</p>
+
+<div class="answer">
+Answers: reading, speaking, Swimming, arriving
+</div>
+
+</div>
+
+`
+
+},
+
+
+/* =====================================================
+   SPEAKING
+===================================================== */
+
+speaking:{
+
+html:`
+
+<h2>🗣️ English Speaking Practice</h2>
+
+<p>
+The best way to improve speaking is to speak regularly.
+Don't wait until your English becomes perfect.
+</p>
+
+
+<h3>Daily Speaking Sentences</h3>
+
+<div class="practice-box">
+
+<h4>Morning</h4>
+
+<p>Good morning!</p>
+<p>How did you sleep?</p>
+<p>What are you doing today?</p>
+<p>I am getting ready for work.</p>
+
+</div>
+
+
+<div class="practice-box">
+
+<h4>At School / Work</h4>
+
+<p>Could you explain this to me?</p>
+<p>Can you help me with this?</p>
+<p>I have a question.</p>
+<p>I'll finish this task soon.</p>
+
+</div>
+
+
+<div class="practice-box">
+
+<h4>Conversation</h4>
+
+<p>How are you doing?</p>
+<p>What do you mean?</p>
+<p>Could you repeat that?</p>
+<p>That sounds interesting.</p>
+<p>Really? Tell me more.</p>
+
+</div>
+
+
+<h3>Useful Speaking Patterns</h3>
+
+<div class="example">
+
+<strong>I think...</strong><br>
+I think English is important.
+
+<br><br>
+
+<strong>I believe...</strong><br>
+I believe practice makes progress.
+
+<br><br>
+
+<strong>In my opinion...</strong><br>
+In my opinion, reading is very useful.
+
+<br><br>
+
+<strong>I'm not sure, but...</strong><br>
+I'm not sure, but I think he is busy.
+
+</div>
+
+
+<h3>Speaking Challenge</h3>
+
+<div class="important">
+
+Speak for one minute about:
+<strong>"My Daily Routine"</strong>
+
+Try to use Present Simple.
+
+</div>
+
+`
+
+},
+
+
+/* =====================================================
+   VOCABULARY
+===================================================== */
+
+vocabulary:{
+
+html:`
+
+<h2>📖 English Vocabulary</h2>
+
+<p>
+Learning vocabulary becomes easier when you learn
+words inside sentences.
+</p>
+
+
+<h3>Useful Words</h3>
+
+
+<div class="example">
+
+<strong>Improve</strong><br>
+Meaning: To make something better.<br>
+Example: I want to improve my English.
+
+</div>
+
+
+<div class="example">
+
+<strong>Confident</strong><br>
+Meaning: Feeling sure about yourself.<br>
+Example: She is confident when speaking English.
+
+</div>
+
+
+<div class="example">
+
+<strong>Opportunity</strong><br>
+Meaning: A chance to do something.<br>
+Example: This is a great opportunity to learn.
+
+</div>
+
+
+<div class="example">
+
+<strong>Essential</strong><br>
+Meaning: Very important or necessary.<br>
+Example: Practice is essential.
+
+</div>
+
+
+<div class="example">
+
+<strong>Accurate</strong><br>
+Meaning: Correct or exact.<br>
+Example: Please give an accurate answer.
+
+</div>
+
+
+<h3>Vocabulary Practice</h3>
+
+<div class="practice-box">
+
+<p>
+Try to make your own sentence with:
+</p>
+
+<ul>
+
+<li>Improve</li>
+<li>Confident</li>
+<li>Opportunity</li>
+<li>Essential</li>
+<li>Accurate</li>
+
+</ul>
+
+</div>
+
+`
+
+},
+
+
+/* =====================================================
+   GRAMMAR
+===================================================== */
+
+grammar:{
+
+html:`
+
+<h2>✏️ English Grammar</h2>
+
+<p>
+Grammar is the system of rules that helps us
+create clear and correct sentences.
+</p>
+
+
+<h3>Parts of Speech</h3>
+
+<ul>
+
+<li>
+<strong>Noun:</strong>
+person, place, thing or idea.
+</li>
+
+<li>
+<strong>Pronoun:</strong>
+replaces a noun.
+</li>
+
+<li>
+<strong>Verb:</strong>
+shows an action or state.
+</li>
+
+<li>
+<strong>Adjective:</strong>
+describes a noun.
+</li>
+
+<li>
+<strong>Adverb:</strong>
+describes a verb, adjective or another adverb.
+</li>
+
+<li>
+<strong>Preposition:</strong>
+shows a relationship.
+</li>
+
+<li>
+<strong>Conjunction:</strong>
+connects words or sentences.
+</li>
+
+</ul>
+
+
+<h3>Basic Sentence Structure</h3>
+
+<div class="example">
+
+<strong>Subject + Verb + Object</strong>
+
+<br><br>
+
+Ali plays cricket.
+
+</div>
+
+
+<h3>Subject-Verb Agreement</h3>
+
+<div class="example">
+
+He <strong>plays</strong> cricket.<br>
+They <strong>play</strong> cricket.
+
+</div>
+
+
+<div class="important">
+
+Remember:
+With he, she and it in Present Simple,
+we usually add <strong>-s / -es</strong> to the verb.
+
+</div>
+
+
+<h3>Practice</h3>
+
+<div class="practice-box">
+
+<p>
+She _____ English every day.
+</p>
+
+<p>
+A) speak
+&nbsp;&nbsp;
+B) speaks
+</p>
+
+<div class="answer">
+Answer: B) speaks
+</div>
+
+</div>
+
+`
+
+},
+
+
+/* =====================================================
+   PRONUNCIATION
+===================================================== */
+
+pronunciation:{
+
+html:`
+
+<h2>🎙️ English Pronunciation</h2>
+
+<p>
+Pronunciation is the way we produce the sounds
+of a language.
+</p>
+
+
+<h3>Listen and Repeat</h3>
+
+<p>
+Choose a short English sentence, listen to it,
+and repeat it several times.
+</p>
+
+
+<div class="practice-box">
+
+<h4>Repeat These Sentences</h4>
+
+<p>
+I want to improve my English.
+</p>
+
+<p>
+Could you please help me?
+</p>
+
+<p>
+What are you doing today?
+</p>
+
+<p>
+I have been learning English for a year.
+</p>
+
+</div>
+
+
+<h3>Word Stress</h3>
+
+<p>
+Some syllables receive more emphasis than others.
+</p>
+
+<div class="example">
+
+<strong>TAble</strong><br>
+<strong>PREsent</strong> — noun<br>
+pre<strong>SENT</strong> — verb
+
+</div>
+
+
+<h3>Practice Tip</h3>
+
+<p>
+Record your voice and listen to yourself.
+Notice pronunciation, speed and clarity.
+</p>
+
+`
+
+},
+
+
+/* =====================================================
+   PHRASAL VERBS
+===================================================== */
+
+phrasal:{
+
+html:`
+
+<h2>🔤 Phrasal Verbs</h2>
+
+<p>
+A phrasal verb usually contains a verb and
+another word such as a preposition or adverb.
+</p>
+
+
+<div class="example">
+
+<strong>Give up</strong><br>
+Meaning: Stop trying.<br>
+Example: Never give up learning English.
+
+</div>
+
+
+<div class="example">
+
+<strong>Find out</strong><br>
+Meaning: Discover information.<br>
+Example: I want to find out the answer.
+
+</div>
+
+
+<div class="example">
+
+<strong>Look after</strong><br>
+Meaning: Take care of.<br>
+Example: She looks after her younger brother.
+
+</div>
+
+
+<div class="example">
+
+<strong>Turn on</strong><br>
+Meaning: Start a device.<br>
+Example: Please turn on the light.
+
+</div>
+
+
+<div class="example">
+
+<strong>Turn off</strong><br>
+Meaning: Stop a device.<br>
+Example: Please turn off the television.
+
+</div>
+
+
+<div class="example">
+
+<strong>Wake up</strong><br>
+Meaning: Stop sleeping.<br>
+Example: I wake up at 7 AM.
+
+</div>
+
+
+<div class="example">
+
+<strong>Carry on</strong><br>
+Meaning: Continue.<br>
+Example: Please carry on with your work.
+
+</div>
+
+`
+
+},
+
+
+/* =====================================================
+   IDIOMS
+===================================================== */
+
+idioms:{
+
+html:`
+
+<h2>💡 English Idioms</h2>
+
+<p>
+Idioms are expressions whose meanings are not
+always obvious from the individual words.
+</p>
+
+
+<div class="example">
+
+<strong>Break the ice</strong><br>
+Meaning: Start a friendly conversation.<br>
+Example: He told a joke to break the ice.
+
+</div>
+
+
+<div class="example">
+
+<strong>Piece of cake</strong><br>
+Meaning: Something very easy.<br>
+Example: The test was a piece of cake.
+
+</div>
+
+
+<div class="example">
+
+<strong>Once in a blue moon</strong><br>
+Meaning: Something that happens rarely.<br>
+Example: I eat fast food once in a blue moon.
+
+</div>
+
+
+<div class="example">
+
+<strong>Under the weather</strong><br>
+Meaning: Feeling unwell.<br>
+Example: I am feeling under the weather today.
+
+</div>
+
+
+<div class="example">
+
+<strong>Hit the nail on the head</strong><br>
+Meaning: Describe something exactly.<br>
+Example: You hit the nail on the head.
+
+</div>
+
+
+<div class="practice-box">
+
+<h4>Idiom Practice</h4>
+
+<p>
+Try to use one idiom in your own sentence today.
+</p>
+
+</div>
+
+`
+
+}
+
+};
+
+
+/* =====================================================
+   MODAL
+===================================================== */
+
+const modal =
+document.getElementById("topicModal");
+
+const modalContent =
+document.getElementById("modalContent");
+
+
+document
+.querySelectorAll(".topic-card")
+.forEach(card=>{
+
+    card.addEventListener("click",()=>{
+
+        const name =
+        card.dataset.topic;
+
+        const lesson =
+        lessons[name];
+
+        if(!lesson)return;
+
+        modalContent.innerHTML=`
+
+        <button
+            class="close-btn"
+            onclick="closeModal()"
+        >
+            ×
+        </button>
+
+        ${lesson.html}
+
+        `;
+
+        modal.classList.add("active");
+
+        document.body.style.overflow="hidden";
+
+    });
+
+});
+
+
+function closeModal(){
+
+    modal.classList.remove("active");
+
+    document.body.style.overflow="";
+
+}
+
+
+modal.addEventListener("click",e=>{
+
+    if(e.target===modal){
+
+        closeModal();
+
+    }
+
+});
+
+
+document.addEventListener("keydown",e=>{
+
+    if(e.key==="Escape"){
+
+        closeModal();
+
+    }
+
+});
+
+
+/* =====================================================
+   SEARCH
+===================================================== */
+
+const searchInput =
+document.getElementById("searchInput");
+
+searchInput.addEventListener(
+"input",
+()=>{
+
+    const value =
+    searchInput.value
+    .toLowerCase()
+    .trim();
+
+    document
+    .querySelectorAll(".topic-card")
+    .forEach(card=>{
+
+        const text =
+        card.textContent.toLowerCase();
+
+        card.style.display =
+        text.includes(value)
+        ? ""
+        : "none";
+
+    });
+
+});
+
+
+/* =====================================================
+   MCQs
+===================================================== */
+
+const questions=[
+
+{
+q:"She _____ to school every day.",
+options:[
+"go",
+"goes",
+"going",
+"gone"
+],
+answer:1,
+explain:
+"With 'she' in Present Simple, we use 'goes'."
+},
+
+{
+q:"I _____ English right now.",
+options:[
+"study",
+"studied",
+"am studying",
+"have studied"
+],
+answer:2,
+explain:
+"'Right now' indicates Present Continuous."
+},
+
+{
+q:"They _____ the movie yesterday.",
+options:[
+"watch",
+"watched",
+"have watched",
+"are watching"
+],
+answer:1,
+explain:
+"'Yesterday' indicates Past Simple."
+},
+
+{
+q:"I _____ my homework already.",
+options:[
+"finish",
+"finished",
+"have finished",
+"am finishing"
+],
+answer:2,
+explain:
+"'Already' commonly indicates Present Perfect."
+},
+
+{
+q:"She _____ dinner when I called.",
+options:[
+"cooks",
+"was cooking",
+"has cooked",
+"will cook"
+],
+answer:1,
+explain:
+"An action in progress in the past uses Past Continuous."
+},
+
+{
+q:"We _____ visit Lahore tomorrow.",
+options:[
+"will",
+"were",
+"have",
+"had"
+],
+answer:0,
+explain:
+"Future Simple uses will + base verb."
+},
+
+{
+q:"_____ is good for your health.",
+options:[
+"Swim",
+"Swimming",
+"Swam",
+"Swims"
+],
+answer:1,
+explain:
+"'Swimming' is a gerund functioning as a noun."
+},
+
+{
+q:"He is good at _____ English.",
+options:[
+"speak",
+"speaks",
+"speaking",
+"spoke"
+],
+answer:2,
+explain:
+"After the preposition 'at', use the gerund 'speaking'."
+},
+
+{
+q:"Please _____ the light.",
+options:[
+"turn on",
+"give up",
+"find out",
+"look after"
+],
+answer:0,
+explain:
+"'Turn on' means to activate a device."
+},
+
+{
+q:"A 'piece of cake' means:",
+options:[
+"Something delicious",
+"Something expensive",
+"Something very easy",
+"Something difficult"
+],
+answer:2,
+explain:
+"'Piece of cake' means something very easy."
+},
+
+{
+q:"He _____ cricket every Sunday.",
+options:[
+"play",
+"plays",
+"playing",
+"played"
+],
+answer:1,
+explain:
+"With 'he' in Present Simple, use 'plays'."
+},
+
+{
+q:"They _____ TV at the moment.",
+options:[
+"watch",
+"watched",
+"are watching",
+"have watched"
+],
+answer:2,
+explain:
+"'At the moment' indicates Present Continuous."
+},
+
+{
+q:"I _____ to Islamabad last week.",
+options:[
+"go",
+"went",
+"have gone",
+"am going"
+],
+answer:1,
+explain:
+"'Last week' refers to a completed past time."
+},
+
+{
+q:"She has _____ her homework.",
+options:[
+"finish",
+"finished",
+"finishing",
+"finishes"
+],
+answer:1,
+explain:
+"Present Perfect uses has/have + V3."
+},
+
+{
+q:"I have been _____ English for two hours.",
+options:[
+"study",
+"studied",
+"studying",
+"studies"
+],
+answer:2,
+explain:
+"Present Perfect Continuous uses has/have been + V-ing."
+}
+
+];
+
+
+let current=0;
+let score=0;
+let answered=false;
+
+
+const quizContainer=
+document.getElementById("quizContainer");
+
+const nextButton=
+document.getElementById("nextQuestion");
+
+const progress=
+document.getElementById("progressBar");
+
+
+function loadQuestion(){
+
+    answered=false;
+
+    const q=
+    questions[current];
+
+    quizContainer.innerHTML=`
+
+    <div class="quiz-question">
+
+        <p style="color:#8fa1b5;">
+            Question ${current+1}
+            of ${questions.length}
+        </p>
+
+        <h3>
+            ${q.q}
+        </h3>
+
+        <div class="quiz-options">
+
+        ${q.options.map(
+        (option,index)=>`
+
+            <button
+                class="quiz-option"
+                data-index="${index}"
+            >
+                ${option}
+            </button>
+
+        `).join("")}
+
+        </div>
+
+        <div
+            id="feedback"
+            class="feedback"
+        ></div>
+
+    </div>
+
+    `;
+
+
+    document
+    .querySelectorAll(".quiz-option")
+    .forEach(button=>{
+
+        button.addEventListener(
+        "click",
+        ()=>{
+
+            checkAnswer(
+            Number(button.dataset.index)
+            );
+
+        });
+
+    });
+
+
+    progress.style.width=
+    (current/questions.length*100)+"%";
+
+}
+
+
+function checkAnswer(selected){
+
+    if(answered)return;
+
+    answered=true;
+
+    const q=
+    questions[current];
+
+    const options=
+    document.querySelectorAll(
+        ".quiz-option"
+    );
+
+    const feedback=
+    document.getElementById(
+        "feedback"
+    );
+
+
+    if(selected===q.answer){
+
+        score++;
+
+        options[selected]
+        .classList.add("correct");
+
+        feedback.textContent=
+        "✓ Correct! "+q.explain;
+
+        feedback.className=
+        "feedback correct-feedback";
+
+    }
+
+    else{
+
+        options[selected]
+        .classList.add("wrong");
+
+        options[q.answer]
+        .classList.add("correct");
+
+        feedback.textContent=
+        "✕ Wrong! Correct answer: "+
+        q.options[q.answer]+
+        ". "+q.explain;
+
+        feedback.className=
+        "feedback wrong-feedback";
+
+    }
+
+
+    options.forEach(button=>{
+
+        button.disabled=true;
+
+    });
+
+
+    if(
+        current===
+        questions.length-1
+    ){
+
+        nextButton.textContent=
+        "Show Final Score";
+
+    }
+
+}
+
+
+nextButton.addEventListener(
+"click",
+()=>{
+
+    if(!answered){
+
+        alert(
+            "Please select an answer first."
+        );
+
+        return;
+
+    }
+
+
+    if(
+        current<
+        questions.length-1
+    ){
+
+        current++;
+
+        loadQuestion();
+
+    }
+
+    else{
+
+        showScore();
+
+    }
+
+});
+
+
+function showScore(){
+
+    const percent=
+    Math.round(
+        score/questions.length*100
+    );
+
+
+    let message;
+
+
+    if(percent>=80){
+
+        message=
+        "Excellent work! Keep practicing.";
+
+    }
+
+    else if(percent>=60){
+
+        message=
+        "Good job! Keep improving your English.";
+
+    }
+
+    else{
+
+        message=
+        "Keep practicing. You will improve.";
+
+    }
+
+
+    quizContainer.innerHTML=`
+
+    <div class="score-box">
+
+        <h2>🎉 Quiz Complete!</h2>
+
+        <div class="score-number">
+            ${score}/${questions.length}
+        </div>
+
+        <p>
+            Your Score:
+            <strong>${percent}%</strong>
+        </p>
+
+        <p style="color:#9daabd;">
+            ${message}
+        </p>
+
+        <button
+            class="btn btn-blue"
+            id="restart"
+            style="margin-top:20px;"
+        >
+            Restart Quiz
+        </button>
+
+    </div>
+
+    `;
+
+
+    progress.style.width="100%";
+
+
+    document
+    .getElementById("restart")
+    .addEventListener(
+        "click",
+        restartQuiz
+    );
+
+}
+
+
+function restartQuiz(){
+
+    current=0;
+
+    score=0;
+
+    answered=false;
+
+    nextButton.textContent=
+    "Next Question";
+
+    loadQuestion();
+
+}
+
+
+loadQuestion();
+
+</script>
+
+</body>
+</html>
